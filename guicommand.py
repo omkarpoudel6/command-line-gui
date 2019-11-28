@@ -10,10 +10,22 @@ def credir():
     credir.config(background="black")
     path=StringVar()
     name=StringVar()
+
     design=Label(credir,text=" ############################################",background="black",fg="Yellow",font="TkFixedFont")
     design.pack(fill =X)
 
-    
+    label1 = Label(credir, text="  Enter Path  ", background="black", fg="yellow", font="TkFixedFont")
+    label1.pack(fill=X)
+
+    entry1 = Entry(credir, background="black", fg="yellow", font="TkFixedFont", textvariable=path)
+    entry1.pack(fill=X)
+
+    label2 = Label(credir, text=" ", background="black")
+    label2.pack(fill=X)
+
+    label3 = Label(credir, text="Directory Name", background="black", fg="yellow", font="TkFixedFont")
+    label3.pack(fill=X)
+
 
 root=Tk()
 root.title("Command Gui")
