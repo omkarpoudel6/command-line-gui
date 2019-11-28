@@ -26,6 +26,21 @@ def credir():
     label3 = Label(credir, text="Directory Name", background="black", fg="yellow", font="TkFixedFont")
     label3.pack(fill=X)
 
+    entry2 = Entry(credir, background="black", fg="yellow", font="TkFixedFont", textvariable=name)
+    entry2.pack(fill=X)
+
+    label4 = Label(credir, text=" ", background="black")
+    label4.pack(fill=X)
+
+    but = Button(credir, text=" Create ", background="white", fg="red", font="TkFixedFont",command=lambda: prints(path.get(), name.get()))
+    but.pack()
+
+    credir.mainloop()
+
+
+def test():
+    print("this will test internet connection")
+
 
 root=Tk()
 root.title("Command Gui")
