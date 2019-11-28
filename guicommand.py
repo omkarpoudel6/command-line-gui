@@ -1,4 +1,20 @@
 from tkinter import *
+def credir():
+    def prints(a,b):
+        print(a,b)
+
+    credir=Toplevel(root)
+    credir.title("Create Directory")
+    credir.geometry("400x300")
+    credir.resizable(0,0)
+    credir.config(background="black")
+    path=StringVar()
+    name=StringVar()
+    design=Label(credir,text=" ############################################",background="black",fg="Yellow",font="TkFixedFont")
+    design.pack(fill =X)
+
+    
+
 root=Tk()
 root.title("Command Gui")
 root.geometry("650x600")
@@ -8,7 +24,7 @@ root.config(background="black")
 lbl1=Label(root,text="#######################################################################",background="black",fg="yellow",padx=10,pady=10,font="TkFixedFont")
 lbl1.pack(fill=X)
 
-credir=Button(root,text="Create Directory",fg="white",background="black",padx=10, pady=10,font="TkFixedFont")
+credir=Button(root,text="Create Directory",fg="white",background="black",padx=10, pady=10,font="TkFixedFont",command=credir)
 credir.pack(fill=X)
 
 lbl2=Label(root,text="***********************************************************************",font="TkFixedFont",background="black",fg="green",padx=10,pady=10)
