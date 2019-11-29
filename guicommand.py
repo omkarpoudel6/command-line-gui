@@ -77,6 +77,17 @@ def checkip():
     label2=Label(checkip,text=" ",background="black")
     label2.pack(fill=X)
 
+    label3=Label(checkip,text="Your Ip : ",background="black",fg="red",font="TkFixedFont")
+    label3.pack(fill=X)
+
+    label4=Label(checkip,text=" ",background="black")
+    label4.pack(fill=X)
+
+    but=Button(checkip,text="Ok",fg="red",font="TkFixedFont",command=lambda: checkip.destroy())
+    but.pack()
+
+    checkip.mainloop()
+
 
 
 
