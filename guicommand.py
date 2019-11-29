@@ -52,6 +52,17 @@ def test():
     label2=Label(test,text=" ",background="black")
     label2.pack(fill=X)
 
+    label3=Label(test,text="There is internet connection!!",background="black",fg="green",font="TkFixedFont")
+    label3.pack(fill=X)
+
+    label4 = Label(test, text=" ", background="black")
+    label4.pack(fill=X)
+
+    but1=Button(test,text="Ok",fg="green",font="TkFixedFont",command=lambda: test.destroy())
+    but1.pack()
+
+    test.mainloop()
+
 
 
 
