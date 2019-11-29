@@ -41,6 +41,19 @@ def credir():
 def test():
     print("this will test internet connection")
 
+    test=Toplevel(root)
+    test.geometry("250x200")
+    test.title("Test Connection")
+    test.config(background="black")
+
+    label1=Label(test,text="*******************************" ,fg="green",background="black",font="TkFixedFont")
+    label1.pack(fill=X)
+
+    label2=Label(test,text=" ",background="black")
+    label2.pack(fill=X)
+
+
+
 
 root=Tk()
 root.title("Command Gui")
@@ -57,13 +70,13 @@ credir.pack(fill=X)
 lbl2=Label(root,text="***********************************************************************",font="TkFixedFont",background="black",fg="green",padx=10,pady=10)
 lbl2.pack(fill=X)
 
-test=Button(root,text="Test Connection",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+test=Button(root,text="Test Connection",background="black", fg="white", padx=10, pady=10,font="TkFixedFont", command=test)
 test.pack(fill=X)
 
 lbl3=Label(root,text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",background="black",fg="red",padx=10,pady=10,font="TkFixedFont")
 lbl3.pack(fill=X)
 
-checkip=Button(root,text="Find Your IP",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+checkip=Button(root,text="Find Your IP",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=checkip)
 checkip.pack(fill=X)
 
 lbl4=Label(root,text="$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",background="black",fg="blue",padx=10,pady=10,font="TkFixedFont")
