@@ -64,6 +64,20 @@ def test():
     test.mainloop()
 
 
+def checkip():
+    print("Checks the ip address of the device")
+    checkip=Toplevel(root)
+    checkip.geometry("250x200")
+    checkip.title("Check Ip")
+    checkip.config(background="black")
+
+    label1=Label(checkip,text="~~~~~~~~~~~~~~~~~~~~~~~~~~~",background="black",fg="red",font="TkFixedFont")
+    label1.pack(fill=X)
+
+    label2=Label(checkip,text=" ",background="black")
+    label2.pack(fill=X)
+
+
 
 
 root=Tk()
