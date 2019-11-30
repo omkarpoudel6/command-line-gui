@@ -126,6 +126,20 @@ def openurl():
     label2=Label(openurl,text=" ",background="black")
     label2.pack(fill=X)
 
+    label3 = Label(openurl, text="Enter URL Here", background="black", fg="pink", font="TkFixedFont")
+    label3.pack(fill=X)
+
+    ent = Entry(openurl, background="black", fg="pink", font="TkFixedFont")
+    ent.pack(fill=X)
+
+    label4 = Label(openurl, text=" ", background="black")
+    label4.pack(fill=X)
+
+    but = Button(openurl, text="OK", fg="pink", command=lambda: openurl.destroy(), background="black")
+    but.pack()
+
+    openurl.mainloop()
+
 
 root=Tk()
 root.title("Command Gui")
