@@ -100,6 +100,20 @@ def traceip():
     label2=Label(traceip,text=" ",background="black")
     label2.pack(fill=X)
 
+    label3 = Label(traceip, text="Enter IP here", background="black", fg="blue", font="TkFixedFont")
+    label3.pack(fill=X)
+
+    ent = Entry(traceip, background="black", fg="blue", font="TkFixedFont")
+    ent.pack(fill=X)
+
+    label4 = Label(traceip, text=" ", background="black")
+    label4.pack(fill=X)
+
+    but1 = Button(traceip, text="Find", fg="blue", font="TkFixedFont")
+    but1.pack()
+
+    traceip.mainloop()
+
 root=Tk()
 root.title("Command Gui")
 root.geometry("650x600")
