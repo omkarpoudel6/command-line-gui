@@ -114,6 +114,19 @@ def traceip():
 
     traceip.mainloop()
 
+def openurl():
+    openurl=Toplevel(root)
+    openurl.geometry("300x300")
+    openurl.title("Visit Website")
+    openurl.config(background="black")
+
+    label1=Label(openurl,text="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", background="black",fg="pink",font="TkFixedFont")
+    label1.pack(fill=X)
+
+    label2=Label(openurl,text=" ",background="black")
+    label2.pack(fill=X)
+
+
 root=Tk()
 root.title("Command Gui")
 root.geometry("650x600")
