@@ -88,8 +88,17 @@ def checkip():
 
     checkip.mainloop()
 
+def traceip():
+    traceip=Toplevel(root)
+    traceip.geometry("400x400")
+    traceip.title("Find Ip Information")
+    traceip.config(background="black")
 
+    label1=Label(traceip,text="$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",background="black",fg="blue",font="TkFixedFont")
+    label1.pack(fill=X)
 
+    label2=Label(traceip,text=" ",background="black")
+    label2.pack(fill=X)
 
 root=Tk()
 root.title("Command Gui")
@@ -118,13 +127,13 @@ checkip.pack(fill=X)
 lbl4=Label(root,text="$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",background="black",fg="blue",padx=10,pady=10,font="TkFixedFont")
 lbl4.pack(fill=X)
 
-traceip=Button(root,text="Find IP Information",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+traceip=Button(root,text="Find IP Information",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=traceip)
 traceip.pack(fill=X)
 
 lbl4=Label(root,text="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",background="black",fg="pink",padx=10,pady=10,font="TkFixedFont")
 lbl4.pack(fill=X)
 
-openurl=Button(root,text="Visit Website",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+openurl=Button(root,text="Visit Website",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openurl)
 openurl.pack(fill=X)
 
 lbl5=Label(root,text="<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>",font="TkFixedFont",background="black",fg="violet",padx=10,pady=10)
