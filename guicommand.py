@@ -168,6 +168,18 @@ def urlip():
     label6 = Label(urlip, text="IP: ", background="black", fg="violet", font="TkFixedFont")
     label6.pack(fill=X)
 
+    label7 = Label(urlip, text=" ", background="black")
+    label7.pack(fill=X)
+
+    but = Button(urlip, text="OK", fg="violet", font="TkFixedFont", command=lambda: urlip.destroy())
+    but.pack()
+
+    urlip.mainloop()
+
+
+def openterminal():
+    print("This will open the terminal")
+
 root=Tk()
 root.title("Command Gui")
 root.geometry("650x600")
