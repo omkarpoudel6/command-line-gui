@@ -1,5 +1,17 @@
 from tkinter import *
+import socket
 import os
+
+def test1():
+    try:
+        s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        s.connect(("google.com",80))
+        #print("There is internet connection.")
+        return 1;
+    except:
+        #print("There is no internet connection.")
+        return 0;
+
 def credir():
     def prints(a,b):
         print(a,b)
@@ -41,6 +53,12 @@ def credir():
 
 def test():
     print("this will test internet connection")
+    connection=StringVar()
+    x=test1()
+    if x==1:
+        connection="There is internet access"
+    else:
+        connection="There is no internet access"
 
     test=Toplevel(root)
     test.geometry("250x200")
@@ -53,7 +71,7 @@ def test():
     label2=Label(test,text=" ",background="black")
     label2.pack(fill=X)
 
-    label3=Label(test,text="There is internet connection!!",background="black",fg="green",font="TkFixedFont")
+    label3=Label(test,text=connection,background="black",fg="green",font="TkFixedFont")
     label3.pack(fill=X)
 
     label4 = Label(test, text=" ", background="black")
