@@ -1,4 +1,5 @@
 from tkinter import *
+import os
 def credir():
     def prints(a,b):
         print(a,b)
@@ -140,6 +141,19 @@ def openurl():
 
     openurl.mainloop()
 
+def urlip():
+    urlip=Toplevel(root)
+    urlip.geometry("300x300")
+    urlip.title("Ip of URL")
+    urlip.config(background="black")
+
+    label1=Label(urlip,text="<><><><><><><><><><><><><><><><><>",background="black",fg="violet",font="TkFixedFont")
+    label1.pack(fill=X)
+
+    label2=Label(urlip,text=" ",background="black")
+    label2.pack(fill=X)
+
+    
 
 root=Tk()
 root.title("Command Gui")
@@ -180,13 +194,13 @@ openurl.pack(fill=X)
 lbl5=Label(root,text="<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>",font="TkFixedFont",background="black",fg="violet",padx=10,pady=10)
 lbl5.pack(fill=X)
 
-urlip=Button(root,text="Find IP of any URL",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+urlip=Button(root,text="Find IP of any URL",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=urlip)
 urlip.pack(fill=X)
 
 lbl2=Label(root,text="++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
 lbl2.pack(fill=X)
 
-terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
+terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openterminal)
 terminal.pack(fill=X)
 
 root.mainloop()
