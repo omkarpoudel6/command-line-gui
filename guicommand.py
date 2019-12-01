@@ -153,7 +153,20 @@ def urlip():
     label2=Label(urlip,text=" ",background="black")
     label2.pack(fill=X)
 
-    
+    label3 = Label(urlip, text="Enter URL here", background="black", fg="violet", font="TkFixedFont")
+    label3.pack(fill=X)
+
+    label4 = Label(urlip, text=" ", background="black")
+    label4.pack(fill=X)
+
+    ent = Entry(urlip, background="black", fg="violet", font="TkFixedFont")
+    ent.pack(fill=X)
+
+    label5 = Label(urlip, text=" ", background="black")
+    label5.pack(fill=X)
+
+    label6 = Label(urlip, text="IP: ", background="black", fg="violet", font="TkFixedFont")
+    label6.pack(fill=X)
 
 root=Tk()
 root.title("Command Gui")
