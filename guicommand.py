@@ -163,6 +163,18 @@ def traceip():
             firstlist = table[0].getText()
             secondlist = table[1].getText()
 
+        traceip2 = Toplevel(root)
+        traceip2.geometry("400x500")
+        traceip2.config(background="black")
+
+        lbl = Label(traceip2, text="", font="TkFixedFont")
+        lbl.pack(fill=X)
+        label = Label(traceip2, text=firstlist, background="black", fg="blue", font="TkFixedFont")
+        label.pack(fill=X)
+
+        label1 = Label(traceip2, text=" ")
+        label1.pack(fill=X)
+
 
 
     traceip=Toplevel(root)
