@@ -122,8 +122,8 @@ def checksip():
     except:
         result = "There is no internet connection"
 
-    results="IP: "+result
-    checkip=Toplevel(root)
+    results = "IP: " + result
+    checkip = Toplevel(root)
     checkip.geometry("400x200")
     checkip.title("Check Ip")
     checkip.config(background="black")
