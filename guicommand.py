@@ -148,43 +148,7 @@ def checksip():
 
 def traceip():
 
-    def trace1(ip):
-        # print("Enter ip address to trace")
-        result = StringVar()
-        url = "https://whatismyipaddress.com/ip/%s" % (ip)
-        uClient = requests.get(url)
-        uClient.close()
-        soup = bs4.BeautifulSoup(uClient.text, "html.parser")
-        table = soup.findAll("table")
-        d = len(table)
-        if d==0:
-            firstlist="error"
-            secondlist="error"
-        else:
-            firstlist=table[0].getText()
-            secondlist=table[1].getText()
-        traceip2=Toplevel(root)
-        traceip2.geometry("400x500")
-        traceip2.config(background="black")
 
-        lbl=Label(traceip2,text="",font="TkFixedFont")
-        lbl.pack(fill=X)
-        label=Label(traceip2,text=firstlist,background="black",fg="blue",font="TkFixedFont")
-        label.pack(fill=X)
-
-        label1 = Label(traceip2, text=" ")
-        label1.pack(fill=X)
-
-        label2 = Label(traceip2, text=secondlist,background="black",fg="blue",font="TkFixedFont")
-        label2.pack(fill=X)
-
-        label3 = Label(traceip2, text=" ",background="black")
-        label3.pack(fill=X)
-
-        but=Button(traceip2,text="Ok",command=lambda:traceip2.destroy())
-        but.pack()
-
-        traceip2.mainloop()
 
 
     traceip=Toplevel(root)
