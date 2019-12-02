@@ -147,7 +147,21 @@ def checksip():
     checkip.mainloop()
 
 def traceip():
-
+    def trace1(ip):
+        # print("Enter ip address to trace")
+        result = StringVar()
+        url = "https://whatismyipaddress.com/ip/%s" % (ip)
+        uClient = requests.get(url)
+        uClient.close()
+        soup = bs4.BeautifulSoup(uClient.text, "html.parser")
+        table = soup.findAll("table")
+        d = len(table)
+        if d == 0:
+            firstlist = "error"
+            secondlist = "error"
+        else:
+            firstlist = table[0].getText()
+            secondlist = table[1].getText()
 
 
 
