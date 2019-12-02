@@ -5,6 +5,8 @@ import requests
 import bs4
 import webbrowser
 
+
+#sub function to check whether there is internet connection or not
 def test1():
     try:
         s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -13,6 +15,7 @@ def test1():
     except:
         return 0;
 
+#function that creates directory in the user specified function
 def credir():
     def creates(pth,nme,typ):
         fpth=pth+nme
@@ -78,6 +81,7 @@ def credir():
     credir.mainloop()
 
 
+#function that checks whether there is internet connection or not.
 def test():
     print("this will test internet connection")
     connection=StringVar()
@@ -110,6 +114,7 @@ def test():
     test.mainloop()
 
 
+#function that displays ip address of the device
 def checksip():
     result = StringVar()
     try:
@@ -143,6 +148,8 @@ def checksip():
 
     checkip.mainloop()
 
+
+#function that displays information about ip address specified.
 def traceip():
     def trace1(ip):
         # print("Enter ip address to trace")
@@ -184,7 +191,6 @@ def traceip():
         traceip2.mainloop()
 
 
-
     traceip=Toplevel(root)
     traceip.geometry("400x400")
     traceip.title("Find Ip Information")
@@ -210,11 +216,10 @@ def traceip():
     but1 = Button(traceip, text="Find", fg="blue", font="TkFixedFont",command= lambda:trace1(ipaddr.get()))
     but1.pack()
 
-    #label5=Label(traceip,text=result)
-    #label5.pack()
-
     traceip.mainloop()
 
+
+#function that opens a new url by taking input
 def openurl():
     def opensurl(site):
         try:
@@ -251,6 +256,8 @@ def openurl():
 
     openurl.mainloop()
 
+
+# function to find ip of site and display it in new window.
 def urlip():
     def findsip(site):
         hostip = StringVar()
