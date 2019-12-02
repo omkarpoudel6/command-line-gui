@@ -3,10 +3,7 @@ import socket
 import os
 import requests
 import bs4
-
-
-
-
+import webbrowser
 
 def test1():
     try:
@@ -219,10 +216,20 @@ def traceip():
     traceip.mainloop()
 
 def openurl():
+    def opensurl(site):
+        try:
+            urls = "https://%s" % (site)
+            webbrowser.open_new_tab(urls)
+        except:
+            print("Error!!! enter valid url")
+
+
     openurl=Toplevel(root)
     openurl.geometry("300x300")
     openurl.title("Visit Website")
     openurl.config(background="black")
+
+    site=StringVar()
 
     label1=Label(openurl,text="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", background="black",fg="pink",font="TkFixedFont")
     label1.pack(fill=X)
@@ -233,13 +240,13 @@ def openurl():
     label3 = Label(openurl, text="Enter URL Here", background="black", fg="pink", font="TkFixedFont")
     label3.pack(fill=X)
 
-    ent = Entry(openurl, background="black", fg="pink", font="TkFixedFont")
+    ent = Entry(openurl, background="black", fg="pink", font="TkFixedFont",textvariable=site)
     ent.pack(fill=X)
 
     label4 = Label(openurl, text=" ", background="black")
     label4.pack(fill=X)
 
-    but = Button(openurl, text="OK", fg="pink", command=lambda: openurl.destroy(), background="black")
+    but = Button(openurl, text="Open", fg="pink", background="black", command=lambda:opensurl(site.get()) )
     but.pack()
 
     openurl.mainloop()
@@ -278,6 +285,7 @@ def urlip():
     but.pack()
 
     urlip.mainloop()
+
 
 
 def openterminal():
