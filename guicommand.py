@@ -252,10 +252,42 @@ def openurl():
     openurl.mainloop()
 
 def urlip():
+    def findsip(site):
+        hostip = StringVar()
+        try:
+            hostip=socket.gethostbyname(site)
+            #print("IP: ",hostip)
+            #siteip="IP: "+hostip
+        except:
+            hostip="Error something went wrong!"
+        urlip2=Toplevel(root)
+        urlip2.geometry("300x300")
+        urlip2.config(background="black")
+        label1=Label(urlip2,text=" ",background="black",font="TkFixedFont")
+        label1.pack()
+
+        label2=Label(urlip2,text="IP: ",background="black",font="TkFixedFont",fg="violet")
+        label2.pack(fill=X)
+
+        label3 = Label(urlip2, text=" ", background="black", font="TkFixedFont")
+        label3.pack()
+
+        label4=Label(urlip2,text=hostip,background="black",fg="violet",font="TkFixedFont")
+        label4.pack(fill=X)
+
+        label5 = Label(urlip2, text=" ", background="black", font="TkFixedFont")
+        label5.pack()
+
+        but1=Button(urlip2,text="OK",fg="violet",font="TkFixedFont",command=lambda:urlip2.destroy())
+        but1.pack()
+
+        urlip2.mainloop()
+
     urlip=Toplevel(root)
     urlip.geometry("300x300")
     urlip.title("Ip of URL")
     urlip.config(background="black")
+    urls=StringVar()
 
     label1=Label(urlip,text="<><><><><><><><><><><><><><><><><>",background="black",fg="violet",font="TkFixedFont")
     label1.pack(fill=X)
@@ -269,19 +301,19 @@ def urlip():
     label4 = Label(urlip, text=" ", background="black")
     label4.pack(fill=X)
 
-    ent = Entry(urlip, background="black", fg="violet", font="TkFixedFont")
+    ent = Entry(urlip, background="black", fg="violet", font="TkFixedFont",textvariable=urls)
     ent.pack(fill=X)
 
     label5 = Label(urlip, text=" ", background="black")
     label5.pack(fill=X)
 
-    label6 = Label(urlip, text="IP: ", background="black", fg="violet", font="TkFixedFont")
+    label6 = Label(urlip, text=" ", background="black", fg="violet", font="TkFixedFont")
     label6.pack(fill=X)
 
     label7 = Label(urlip, text=" ", background="black")
     label7.pack(fill=X)
 
-    but = Button(urlip, text="OK", fg="violet", font="TkFixedFont", command=lambda: urlip.destroy())
+    but = Button(urlip, text="find", fg="violet", font="TkFixedFont", command=lambda: findsip(urls.get()))
     but.pack()
 
     urlip.mainloop()
