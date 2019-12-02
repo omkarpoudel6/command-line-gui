@@ -6,10 +6,8 @@ def test1():
     try:
         s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
         s.connect(("google.com",80))
-        #print("There is internet connection.")
         return 1;
     except:
-        #print("There is no internet connection.")
         return 0;
 
 def credir():
