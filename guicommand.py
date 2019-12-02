@@ -319,13 +319,10 @@ def urlip():
     urlip.mainloop()
 
 
-
-def openterminal():
-    print("This will open the terminal")
-
+#main window ie home screen
 root=Tk()
 root.title("Command Gui")
-root.geometry("650x600")
+root.geometry("700x680")
 root.resizable(0,0)
 root.config(background="black")
 
@@ -370,5 +367,11 @@ lbl2.pack(fill=X)
 
 terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openterminal)
 terminal.pack(fill=X)
+
+lbl2=Label(root,text=" ",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
+lbl2.pack(fill=X)
+
+exit=Button(root,text="Exit",background="black",fg="grey",padx=10,pady=10,font="TkFixedFont",command=lambda:root.destroy())
+exit.pack(fill=X)
 
 root.mainloop()
