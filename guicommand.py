@@ -175,6 +175,17 @@ def traceip():
         label1 = Label(traceip2, text=" ")
         label1.pack(fill=X)
 
+        label2 = Label(traceip2, text=secondlist, background="black", fg="blue", font="TkFixedFont")
+        label2.pack(fill=X)
+
+        label3 = Label(traceip2, text=" ", background="black")
+        label3.pack(fill=X)
+
+        but = Button(traceip2, text="Ok", command=lambda: traceip2.destroy())
+        but.pack()
+
+        traceip2.mainloop()
+
 
 
     traceip=Toplevel(root)
