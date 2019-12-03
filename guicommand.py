@@ -372,7 +372,7 @@ urlip.pack(fill=X)
 lbl2=Label(root,text=" ",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
 lbl2.pack(fill=X)
 
-terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openterminal)
+terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont")
 terminal.pack(fill=X)
 
 lbl2=Label(root,text=" ",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
