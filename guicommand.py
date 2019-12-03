@@ -1,6 +1,12 @@
 from tkinter import *
 import socket
 import os
+import requests
+import bs4
+
+
+
+
 
 def test1():
     try:
@@ -107,14 +113,21 @@ def test():
     test.mainloop()
 
 
-def checkip():
-    def checkingip():
-        
-    print("Checks the ip address of the device")
+def checksip():
+    result = StringVar()
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("google.com", 80))
+        result = s.getsockname()[0]
+    except:
+        result = "There is no internet connection"
+
+    results="IP: "+result
     checkip=Toplevel(root)
-    checkip.geometry("250x200")
+    checkip.geometry("400x200")
     checkip.title("Check Ip")
     checkip.config(background="black")
+
 
     label1=Label(checkip,text="~~~~~~~~~~~~~~~~~~~~~~~~~~~",background="black",fg="red",font="TkFixedFont")
     label1.pack(fill=X)
@@ -122,7 +135,7 @@ def checkip():
     label2=Label(checkip,text=" ",background="black")
     label2.pack(fill=X)
 
-    label3=Label(checkip,text="Your Ip : ",background="black",fg="red",font="TkFixedFont")
+    label3=Label(checkip,text=results,background="black",fg="red",font="TkFixedFont")
     label3.pack(fill=X)
 
     label4=Label(checkip,text=" ",background="black")
@@ -134,10 +147,52 @@ def checkip():
     checkip.mainloop()
 
 def traceip():
+
+    def trace1(ip):
+        # print("Enter ip address to trace")
+        result = StringVar()
+        url = "https://whatismyipaddress.com/ip/%s" % (ip)
+        uClient = requests.get(url)
+        uClient.close()
+        soup = bs4.BeautifulSoup(uClient.text, "html.parser")
+        table = soup.findAll("table")
+        d = len(table)
+        if d==0:
+            firstlist="error"
+            secondlist="error"
+        else:
+            firstlist=table[0].getText()
+            secondlist=table[1].getText()
+        traceip2=Toplevel(root)
+        traceip2.geometry("400x500")
+        traceip2.config(background="black")
+
+        lbl=Label(traceip2,text="",font="TkFixedFont")
+        lbl.pack(fill=X)
+        label=Label(traceip2,text=firstlist,background="black",fg="blue",font="TkFixedFont")
+        label.pack(fill=X)
+
+        label1 = Label(traceip2, text=" ")
+        label1.pack(fill=X)
+
+        label2 = Label(traceip2, text=secondlist,background="black",fg="blue",font="TkFixedFont")
+        label2.pack(fill=X)
+
+        label3 = Label(traceip2, text=" ",background="black")
+        label3.pack(fill=X)
+
+        but=Button(traceip2,text="Ok",command=lambda:traceip2.destroy())
+        but.pack()
+
+        traceip2.mainloop()
+
+
     traceip=Toplevel(root)
     traceip.geometry("400x400")
     traceip.title("Find Ip Information")
     traceip.config(background="black")
+
+    ipaddr=StringVar()
 
     label1=Label(traceip,text="$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",background="black",fg="blue",font="TkFixedFont")
     label1.pack(fill=X)
@@ -148,14 +203,17 @@ def traceip():
     label3 = Label(traceip, text="Enter IP here", background="black", fg="blue", font="TkFixedFont")
     label3.pack(fill=X)
 
-    ent = Entry(traceip, background="black", fg="blue", font="TkFixedFont")
+    ent = Entry(traceip, background="black",textvariable=ipaddr, fg="blue", font="TkFixedFont")
     ent.pack(fill=X)
 
     label4 = Label(traceip, text=" ", background="black")
     label4.pack(fill=X)
 
-    but1 = Button(traceip, text="Find", fg="blue", font="TkFixedFont")
+    but1 = Button(traceip, text="Find", fg="blue", font="TkFixedFont",command= lambda:trace1(ipaddr.get()))
     but1.pack()
+
+    #label5=Label(traceip,text=result)
+    #label5.pack()
 
     traceip.mainloop()
 
@@ -245,7 +303,7 @@ test.pack(fill=X)
 lbl3=Label(root,text=" ",background="black",fg="red",padx=10,pady=10,font="TkFixedFont")
 lbl3.pack(fill=X)
 
-checkip=Button(root,text="Find Your IP",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=checkip)
+checkip=Button(root,text="Find Your IP",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=checksip)
 checkip.pack(fill=X)
 
 lbl4=Label(root,text=" ",background="black",fg="blue",padx=10,pady=10,font="TkFixedFont")

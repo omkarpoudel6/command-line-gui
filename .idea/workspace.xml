@@ -24,6 +24,7 @@
   <component name="ProjectId" id="1UCHfCFilIWEQM1Ww08IiLHHgr6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../homepractice/image.py" />
   </component>
