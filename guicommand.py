@@ -11,8 +11,17 @@ def test1():
         return 0;
 
 def credir():
-    def prints(a,b):
-        print(a,b)
+    def creates(pth,nme,typ):
+        fpth=pth+nme
+        if typ=="Folder":
+            os.mkdir(fpth)
+            name.set("")
+            path.set("")
+        elif typ=="File":
+            open(fpth,"w")
+            name.set("")
+            path.set("")
+
 
     credir=Toplevel(root)
     credir.title("Create Directory")
@@ -21,6 +30,8 @@ def credir():
     credir.config(background="black")
     path=StringVar()
     name=StringVar()
+    type=StringVar()
+    error=StringVar()
 
     design=Label(credir,text=" ############################################",background="black",fg="Yellow",font="TkFixedFont")
     design.pack(fill =X)
@@ -43,7 +54,22 @@ def credir():
     label4 = Label(credir, text=" ", background="black")
     label4.pack(fill=X)
 
-    but = Button(credir, text=" Create ", background="white", fg="red", font="TkFixedFont",command=lambda: prints(path.get(), name.get()))
+    rbut1=Radiobutton(credir,text="File",variable=type,value="File",background="black",fg="yellow",font="TkFixedFont")
+    rbut1.pack()
+
+    label5 = Label(credir, text=" ", background="black")
+    label5.pack(fill=X)
+
+    rbut2 = Radiobutton(credir, text="Folder",variable=type,value="Folder",background="black", fg="yellow", font="TkFixedFont")
+    rbut2.pack()
+
+    label6 = Label(credir, text=error, background="black")
+    label6.pack(fill=X)
+
+    label7 = Label(credir, text=" ", background="black")
+    label7.pack(fill=X)
+
+    but = Button(credir, text=" Create ", background="white", fg="red", font="TkFixedFont",command=lambda: creates(path.get(), name.get(),type.get()))
     but.pack()
 
     credir.mainloop()
@@ -82,6 +108,8 @@ def test():
 
 
 def checkip():
+    def checkingip():
+        
     print("Checks the ip address of the device")
     checkip=Toplevel(root)
     checkip.geometry("250x200")
@@ -202,43 +230,43 @@ root.geometry("650x600")
 root.resizable(0,0)
 root.config(background="black")
 
-lbl1=Label(root,text="#######################################################################",background="black",fg="yellow",padx=10,pady=10,font="TkFixedFont")
+lbl1=Label(root,text=" ",background="black",fg="yellow",padx=10,pady=10,font="TkFixedFont")
 lbl1.pack(fill=X)
 
 credir=Button(root,text="Create Directory",fg="white",background="black",padx=10, pady=10,font="TkFixedFont",command=credir)
 credir.pack(fill=X)
 
-lbl2=Label(root,text="***********************************************************************",font="TkFixedFont",background="black",fg="green",padx=10,pady=10)
+lbl2=Label(root,text=" ",font="TkFixedFont",background="black",fg="green",padx=10,pady=10)
 lbl2.pack(fill=X)
 
 test=Button(root,text="Test Connection",background="black", fg="white", padx=10, pady=10,font="TkFixedFont", command=test)
 test.pack(fill=X)
 
-lbl3=Label(root,text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",background="black",fg="red",padx=10,pady=10,font="TkFixedFont")
+lbl3=Label(root,text=" ",background="black",fg="red",padx=10,pady=10,font="TkFixedFont")
 lbl3.pack(fill=X)
 
 checkip=Button(root,text="Find Your IP",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=checkip)
 checkip.pack(fill=X)
 
-lbl4=Label(root,text="$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",background="black",fg="blue",padx=10,pady=10,font="TkFixedFont")
+lbl4=Label(root,text=" ",background="black",fg="blue",padx=10,pady=10,font="TkFixedFont")
 lbl4.pack(fill=X)
 
 traceip=Button(root,text="Find IP Information",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=traceip)
 traceip.pack(fill=X)
 
-lbl4=Label(root,text="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",background="black",fg="pink",padx=10,pady=10,font="TkFixedFont")
+lbl4=Label(root,text=" ",background="black",fg="pink",padx=10,pady=10,font="TkFixedFont")
 lbl4.pack(fill=X)
 
 openurl=Button(root,text="Visit Website",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openurl)
 openurl.pack(fill=X)
 
-lbl5=Label(root,text="<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>",font="TkFixedFont",background="black",fg="violet",padx=10,pady=10)
+lbl5=Label(root,text=" ",font="TkFixedFont",background="black",fg="violet",padx=10,pady=10)
 lbl5.pack(fill=X)
 
 urlip=Button(root,text="Find IP of any URL",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=urlip)
 urlip.pack(fill=X)
 
-lbl2=Label(root,text="++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
+lbl2=Label(root,text=" ",font="TkFixedFont",background="black",fg="purple",padx=10,pady=10)
 lbl2.pack(fill=X)
 
 terminal=Button(root,text="Open Terminal",background="black", fg="white", padx=10, pady=10,font="TkFixedFont",command=openterminal)
